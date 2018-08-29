@@ -1,0 +1,66 @@
+level header - up to 22 commands
+	17 commands to load to RAM
+	1D command end loading
+	25 load mario
+	06 random jumps?
+
+objects loader - up to 1F/10 commands
+	22 commands to load objects			(segmented ptr to geolayout/disp list)
+
+---- bunch of nothings ----
+
+area header - 1F command
+	1F start area						(segmented ptr to geolayout)
+	
+area data - 24/26 commands
+	24 commands to load objects
+	26 commands to load warps
+
+area footer - up to command 20
+	2E to load terrain 					(segmented ptr to collision)
+	30 to end level layout
+	36 to play music
+	31 to define terrain
+	20 to end area
+
+level footer - static data, not change
+	1E allocator
+	2B default position
+	11 accumulator thing
+	12 another accumulator thing
+	1C cleanup
+	04 delay?
+	02 done
+
+
+main area geo layout
+	08 - set screen render area
+	04 - open node
+		0C - disable Z buffer
+		04 - open node
+			09 - something lol
+			04 - open node
+				19 - set background
+			05 - close node
+		05 - close node
+		0C - enable Z buffer
+		04 - open node
+			0A - camera frustrum
+			04 - open node
+				0F - idk lol
+				04 - open node
+					15 - load display list
+					15 - load display list
+					17 - sets rendering
+					18 - load polygons asm 1
+					18 - load polygons asm 2
+					05 - close node
+				05 - close node
+			05 - close node
+			0C - disable Z buffer
+			04 - open node
+				18 - load polygons asm 3
+			05 - close node
+		05 - close node
+	05 - close node
+	01 - fini
