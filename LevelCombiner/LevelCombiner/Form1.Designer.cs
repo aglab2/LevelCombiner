@@ -261,9 +261,12 @@
             "Course 13",
             "Course 14",
             "Course 15",
-            "Bowser 1",
-            "Bowser 2",
-            "Bowser 3",
+            "Bowser Course 1",
+            "Bowser Battle 1",
+            "Bowser Course 2",
+            "Bowser Battle 2",
+            "Bowser Course 3",
+            "Bowser Battle 3",
             "Peach Slide",
             "Metal Cap",
             "Wing Cap",
@@ -271,7 +274,9 @@
             "Rainbow",
             "Aquarium",
             "\"The End\"",
-            "OverWorld"});
+            "Castle Grounds",
+            "Inside Castle",
+            "Castle Courtyard"});
             this.levelsComboBox.Location = new System.Drawing.Point(86, 38);
             this.levelsComboBox.Name = "levelsComboBox";
             this.levelsComboBox.Size = new System.Drawing.Size(134, 21);

@@ -65,6 +65,7 @@
     <Compile Include="Region\DynamicRegion.cs" />
     <Compile Include="Region\GeoLayoutRegion.cs" />
     <Compile Include="Region\LevelScriptRegion.cs" />
+    <Compile Include="Region\MergedRegionList.cs" />
     <Compile Include="Region\Region.cs" />
     <Compile Include="RelocationTable\KeyRelocationTable.cs" />
     <Compile Include="RelocationTable\QueueRelocationTable.cs" />

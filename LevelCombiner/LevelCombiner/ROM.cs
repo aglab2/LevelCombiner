@@ -83,6 +83,13 @@ namespace LevelCombiner
             Int64 ret = BitConverter.ToInt64(rom, offset + extraOffset);
             return IPAddress.NetworkToHostOrder(ret);
         }
+        public void Write64(UInt64 data, int extraOffset = 0)
+        {
+            Int64 endianData = IPAddress.HostToNetworkOrder((Int64)data);
+            byte[] convertedData = BitConverter.GetBytes(endianData);
+            Array.Copy(convertedData, 0, rom, offset + extraOffset, 8);
+        }
+
 
         public byte PRead8(int offset)
         {

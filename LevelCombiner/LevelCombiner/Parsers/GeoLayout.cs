@@ -80,7 +80,7 @@ namespace LevelCombiner
                 } while (cmd != 0x01);
 
                 // !!! : Group together all display list information in geolayout
-                SortedRegionList compoundGraphicsData = new SortedRegionList();
+                MergedRegionList compoundGraphicsData = new MergedRegionList();
                 List<Region> otherRegions = new List<Region>();
 
                 int count = 0;
@@ -103,12 +103,9 @@ namespace LevelCombiner
                             break;
                     }
                 }
-
-                foreach (KeyValuePair<int, int> pair in compoundGraphicsData.RegionList)
-                {
-                    Region reg = new DynamicRegion(pair.Key, pair.Value, RegionState.GraphicsData);
-                    regions.Add(reg);
-                }
+                
+                Region graphicsRegion = new DynamicRegion(compoundGraphicsData.start, compoundGraphicsData.length, RegionState.GraphicsData);
+                regions.Add(graphicsRegion);
 
                 regions.AddRange(otherRegions);
 
@@ -168,7 +165,7 @@ namespace LevelCombiner
             int segmentedAddress = rom.Read32(8);
             int address = (int)rom.GetROMAddress(segmentedAddress);
 
-            DisplayList.PerformRegionParse(rom, regions, address);
+            DisplayList.PerformRegionParse(rom, regions, address, rom.Read8(1));
         }
 
         private static void RelocationParse_cmd13(ROM rom, RelocationTable table)
@@ -185,7 +182,7 @@ namespace LevelCombiner
             int segmentedAddress = rom.Read32(4);
             int address = (int)rom.GetROMAddress(segmentedAddress);
 
-            DisplayList.PerformRegionParse(rom, regions, address);
+            DisplayList.PerformRegionParse(rom, regions, address, rom.Read8(1));
         }
 
         private static void RelocationParse_cmd15(ROM rom, RelocationTable table)

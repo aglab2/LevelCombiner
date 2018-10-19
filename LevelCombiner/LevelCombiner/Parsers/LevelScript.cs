@@ -111,7 +111,7 @@ namespace LevelCombiner
             state.area = area;
 
             byte curCmdIndex;
-            do
+            while (rom.offset < region.length)
             {
                 curCmdIndex = rom.Read8();
                 byte curCmdSize = rom.Read8(1);
@@ -125,7 +125,7 @@ namespace LevelCombiner
                 if (curCmdIndex != 0x7)
                     rom.AddOffset(curCmdSize);
             }
-            while (rom.offset < region.length);
+            
         }
 
         public static void PerformHeaderParse(ROM rom, int offset)
@@ -217,7 +217,7 @@ namespace LevelCombiner
         private static void RegionParse_common(ROM rom, List<Region> regions, RegionParseState state)
         {
             int curCmd = rom.Read8();
-            if (state.regionState == RegionState.AreaData && curCmd != 0x24 && curCmd != 0x26)
+            if ((state.regionState == RegionState.AreaData || state.regionState == RegionState.AreaScrolls) && curCmd != 0x24 && curCmd != 0x26)
             {
                 CutRegion(rom, regions, state, rom.offset, RegionState.AreaFooter);
             }
@@ -428,7 +428,7 @@ namespace LevelCombiner
             try
             {
                 List<Region> modelRegions = new List<Region>();
-                DisplayList.PerformRegionParse(rom, modelRegions, displayListROMAddress);
+                DisplayList.PerformRegionParse(rom, modelRegions, displayListROMAddress, rom.Read8(2));
 
                 foreach (Region region in modelRegions)
                     region.model = model;

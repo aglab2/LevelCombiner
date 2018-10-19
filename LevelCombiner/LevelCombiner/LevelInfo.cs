@@ -47,7 +47,7 @@ namespace LevelCombiner
             new LevelOffsetsDescription(0x16, 11+7,   18, 6),  // Lethal Lava Land
             new LevelOffsetsDescription(0x17, 11+9,   19, 8),  // Dire Dire Docks
             new LevelOffsetsDescription(0x18, 11+2,   20, 1),  // Whomp's Fortress
-            new LevelOffsetsDescription(0x19, 11+25,  21, 29), // Picture at the end
+            new LevelOffsetsDescription(0x19, 11+25,  21, 27), // "The End"
             new LevelOffsetsDescription(0x1A, 8,      22, 30), // Castle Courtyard
             new LevelOffsetsDescription(0x1B, 11+19,  23, 21), // Peach's Secret Slide
             new LevelOffsetsDescription(0x1C, 11+20,  24, 22), // Metal Cap

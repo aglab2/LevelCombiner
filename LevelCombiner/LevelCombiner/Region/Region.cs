@@ -43,6 +43,9 @@ namespace LevelCombiner
             this.romStart = start;
             this.length = length;
             this.state = state;
+
+            if (start == 0)
+                throw new ArgumentNullException("ROM Region Start is 0, bug?");
         }
 
         // Read from dirname init

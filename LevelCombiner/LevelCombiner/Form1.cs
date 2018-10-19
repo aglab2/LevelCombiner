@@ -110,7 +110,7 @@ namespace LevelCombiner
             // Trim AreaData if flag is checked
             foreach (Region region in regions)
             {
-                if (region.state != RegionState.AreaData)
+                if (region.state != RegionState.AreaData && region.state != RegionState.AreaScrolls)
                     continue;
 
                 ObjectsTrimmer.Trim(region, !areasTrimmed.Contains(region.area));

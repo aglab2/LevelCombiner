@@ -19,6 +19,9 @@ namespace LevelCombiner
 
         public void AddRegion(int start, int length)
         {
+            if (start == 0)
+                throw new ArgumentNullException("ROM Region Start is 0, bug?");
+
             if (length == 0)
                 return;
 
