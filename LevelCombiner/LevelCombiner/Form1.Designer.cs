@@ -49,6 +49,7 @@
             this.levelsComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.trimObjectsCheckbox = new System.Windows.Forms.CheckBox();
+            this.checkBoxOldScrolls = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // splitROM
@@ -141,7 +142,7 @@
             this.areaObjectsDataCheckbox.AutoSize = true;
             this.areaObjectsDataCheckbox.Checked = true;
             this.areaObjectsDataCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.areaObjectsDataCheckbox.Location = new System.Drawing.Point(123, 201);
+            this.areaObjectsDataCheckbox.Location = new System.Drawing.Point(123, 224);
             this.areaObjectsDataCheckbox.Name = "areaObjectsDataCheckbox";
             this.areaObjectsDataCheckbox.Size = new System.Drawing.Size(87, 17);
             this.areaObjectsDataCheckbox.TabIndex = 8;
@@ -153,7 +154,7 @@
             this.areaGraphicsCheckBox.AutoSize = true;
             this.areaGraphicsCheckBox.Checked = true;
             this.areaGraphicsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.areaGraphicsCheckBox.Location = new System.Drawing.Point(123, 224);
+            this.areaGraphicsCheckBox.Location = new System.Drawing.Point(123, 247);
             this.areaGraphicsCheckBox.Name = "areaGraphicsCheckBox";
             this.areaGraphicsCheckBox.Size = new System.Drawing.Size(93, 17);
             this.areaGraphicsCheckBox.TabIndex = 9;
@@ -235,11 +236,11 @@
             this.levelCollisionCheckbox.AutoSize = true;
             this.levelCollisionCheckbox.Checked = true;
             this.levelCollisionCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.levelCollisionCheckbox.Location = new System.Drawing.Point(12, 201);
+            this.levelCollisionCheckbox.Location = new System.Drawing.Point(123, 201);
             this.levelCollisionCheckbox.Name = "levelCollisionCheckbox";
-            this.levelCollisionCheckbox.Size = new System.Drawing.Size(93, 17);
+            this.levelCollisionCheckbox.Size = new System.Drawing.Size(89, 17);
             this.levelCollisionCheckbox.TabIndex = 17;
-            this.levelCollisionCheckbox.Text = "Level Collision";
+            this.levelCollisionCheckbox.Text = "Area Collision";
             this.levelCollisionCheckbox.UseVisualStyleBackColor = true;
             // 
             // levelsComboBox
@@ -302,11 +303,22 @@
             this.trimObjectsCheckbox.Text = "Trim Objects";
             this.trimObjectsCheckbox.UseVisualStyleBackColor = true;
             // 
+            // checkBoxOldScrolls
+            // 
+            this.checkBoxOldScrolls.AutoSize = true;
+            this.checkBoxOldScrolls.Location = new System.Drawing.Point(123, 281);
+            this.checkBoxOldScrolls.Name = "checkBoxOldScrolls";
+            this.checkBoxOldScrolls.Size = new System.Drawing.Size(91, 17);
+            this.checkBoxOldScrolls.TabIndex = 22;
+            this.checkBoxOldScrolls.Text = "1.9.3S Scrolls";
+            this.checkBoxOldScrolls.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 359);
+            this.Controls.Add(this.checkBoxOldScrolls);
             this.Controls.Add(this.trimObjectsCheckbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.levelsComboBox);
@@ -360,6 +372,7 @@
         private System.Windows.Forms.ComboBox levelsComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox trimObjectsCheckbox;
+        private System.Windows.Forms.CheckBox checkBoxOldScrolls;
     }
 }
 

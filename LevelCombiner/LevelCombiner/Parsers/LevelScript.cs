@@ -63,6 +63,7 @@ namespace LevelCombiner
             public RegionState regionState;
             public Stack<int> retAddressStack;
             public sbyte area;
+            public bool isOldBehaviourChecked;
 
             public RegionParseState()
             {
@@ -73,7 +74,7 @@ namespace LevelCombiner
 
         const byte terminateCmd = 0x2;
 
-        public static void PerformRegionParse(ROM rom, List<Region> regions, int offset)
+        public static void PerformRegionParse(ROM rom, List<Region> regions, int offset, bool isOldScrollBehaviour)
         {
             rom.PushOffset(offset);
 
@@ -540,7 +541,7 @@ namespace LevelCombiner
 
                 rom.Write16(newIntX, 0x04);
                 rom.Write16(newAddress & 0xFFFF, 0x10);
-                rom.Write32(scrollBehaviourLegacy, 0x14);
+                rom.Write32(state.isOldBehaviourChecked ? scrollBehaviourLegacy : scrollBehaviour, 0x14);
             }
         }
 

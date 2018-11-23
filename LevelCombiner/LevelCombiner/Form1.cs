@@ -77,7 +77,7 @@ namespace LevelCombiner
             List<Region> regions = new List<Region>();
             
             // 1st pass : find out where regions are
-            LevelScript.PerformRegionParse(rom, regions, offset);
+            LevelScript.PerformRegionParse(rom, regions, offset, checkBoxOldScrolls.Checked);
 
             foreach (Region region in regions)
             {
